@@ -1,0 +1,176 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Icon from "../components/Icon.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const proyects = [
+  {
+    title: "Hadas Luxury",
+    description:
+      "Hadas Luxury is a mobile-first web platform designed to simplify the process of finding exquisite vacation properties nestled within the enchanting streets of Yucatan and Cancún. Our goal is to provide users with seamless access to truly exceptional rental accommodations, ensuring unforgettable experiences in these stunning destinations.",
+    tags: ["React", "Next.js", "TailwindCSS", "AWS", "Django"],
+    link: "https://hadas-luxury.vercel.app/",
+    repo: "",
+    date: new Date("2024-04-22"),
+    image: "proyects/hadas.png",
+  },
+  {
+    title: "Control Suite",
+    description:
+      "Control Suite is a comprehensive web-based management platform tailored specifically for restaurants, streamlining operations and providing robust control over every aspect of your business behind the scenes. From overseeing processes to managing connectivity and enhancing interactivity, Control Suite empowers restaurant owners to efficiently orchestrate their operations with ease.",
+    tags: ["React", "Next.js", "MUI"],
+    link: "https://controlsuite.pro/",
+    repo: "",
+    date: new Date("2024-04-22"),
+    image: "proyects/cs.png",
+  },
+  {
+    title: "Ultramar Fast Pass",
+    description:
+      "Ultramar Fast Pass is a cutting-edge tool designed to minimize queues at ferry terminals. Our objective is to streamline the boarding process by enabling customers with open tickets to make reservations in advance, ensuring a seamless and efficient experience for all travelers.",
+    tags: ["React", "Next.js", "CSS"],
+    link: "https://reservados.ultramarferry.com/",
+    repo: "",
+    date: new Date("2024-04-22"),
+    image: "proyects/ultramar.png",
+  },
+  {
+    title: "DevQuality",
+    description:
+      "DevQuality is a forward-thinking web agency dedicated to bridging the gap between your company and its target audience. Our mission is to assist you in crafting compelling websites and meticulously testing every aspect to ensure seamless functionality. With DevQuality, you can trust in our expertise to transform your digital presence into a powerful tool for engaging with real people.",
+    tags: ["Astro", "TailwindCSS", "Vercel"],
+    link: "https://www.devquality.com.mx/",
+    repo: "",
+    date: new Date("2024-03-13"),
+    image: "proyects/devquality.png",
+  },
+];
+
+const stack = [
+  {
+    icon: "",
+    title: "Astro",
+  },
+  { title: "React", icon: "" },
+  { title: "Next js", icon: "" },
+  { title: "Django", icon: "" },
+  { title: "JavaScript", icon: "" },
+  { title: "Python", icon: "" },
+  { title: "MySQL", icon: "" },
+  { title: "Mongo DB", icon: "" },
+  { title: "Responsive", icon: "" },
+  { title: "Scraping", icon: "" },
+  { title: "Git", icon: "" },
+  { title: "GitHub", icon: "" },
+  { title: "GitLab", icon: "" },
+  { title: "HTML5", icon: "" },
+  { title: "CSS", icon: "" },
+  { title: "Jest", icon: "" },
+  { title: "Cypress", icon: "" },
+  { title: "Selenium", icon: "" },
+  { title: "Node js", icon: "" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <div class="mx-auto max-w-screen-xl" id="about">
+          <div>
+            <h2 class="text-3xl font-bold sm:text-4xl">
+              Full stack web developer
+            </h2>
+
+            <p class="mt-4 text-gray-600">
+              I bring over 5 years of experience as a full-stack web developer,
+              dedicated to crafting exceptional digital products that empower
+              companies to prioritize their core objectives. My expertise lies
+              in utilizing a dynamic tech stack, including React with Next.js
+              for seamless front-end experiences, Django for robust back-end
+              solutions, and I'm currently delving into Astro to further enhance
+              my development capabilities.
+            </p>
+
+            <a
+              href="https://serbrylex.com/cv/CVGA.pdf"
+              class="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+            >
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-16" id="proyects">
+          <h2 class="text-3xl font-bold sm:text-4xl">Proyects</h2>
+
+          <div class="grid grid-cols-1 gap-8 mt-8">
+            <!-- Proyects -->
+            {
+              proyects.map((proyect) => (
+                <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                  <img
+                    alt=""
+                    src={proyect.image}
+                    class="h-56 w-full object-cover"
+                  />
+
+                  <div class="bg-white p-4 sm:p-6">
+                    <time
+                      datetime="2022-10-10"
+                      class="block text-xs text-gray-500"
+                    >
+                      {proyect.date.toLocaleDateString()}
+                    </time>
+
+                    <a href={proyect.link}>
+                      <h3 class="mt-0.5 text-lg text-gray-900">
+                        {proyect.title}
+                      </h3>
+                    </a>
+
+                    <div class="my-4 flex flex-wrap gap-1">
+                      {proyect.tags.map((tag) => (
+                        <span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+                      {proyect.description}
+                    </p>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="mt-16" id="stack">
+          <h2 class="text-3xl font-bold sm:text-4xl">Tech Stack</h2>
+
+          <div class="grid grid-cols-4 gap-4 mt-8">
+            <!-- Stack -->
+            {
+              stack.map((item) => (
+                <div class="flex flex-col items-center justify-center rounded-xl border border-gray-800 p-4 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                  <Icon />
+                  <span class="text-gray-600 text-center">{item.title}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+    </main>
+	<Footer />
+  </body>
+</html>
