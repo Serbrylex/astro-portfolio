@@ -1,8 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
-import Icon from "../components/Icon.astro";
+import Stack from '../components/Stack.jsx';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const proyects = [
@@ -11,7 +11,7 @@ const proyects = [
     description:
       "Hadas Luxury is a mobile-first web platform designed to simplify the process of finding exquisite vacation properties nestled within the enchanting streets of Yucatan and Cancún. Our goal is to provide users with seamless access to truly exceptional rental accommodations, ensuring unforgettable experiences in these stunning destinations.",
     tags: ["React", "Next.js", "TailwindCSS", "AWS", "Django"],
-    link: "https://hadas-luxury.vercel.app/",
+    link: "https://www.hadasluxury.com/",
     repo: "",
     date: new Date("2024-04-22"),
     image: "proyects/hadas.png",
@@ -47,31 +47,6 @@ const proyects = [
     image: "proyects/devquality.png",
   },
 ];
-
-const stack = [
-  {
-    icon: "",
-    title: "Astro",
-  },
-  { title: "React", icon: "" },
-  { title: "Next js", icon: "" },
-  { title: "Django", icon: "" },
-  { title: "JavaScript", icon: "" },
-  { title: "Python", icon: "" },
-  { title: "MySQL", icon: "" },
-  { title: "Mongo DB", icon: "" },
-  { title: "Responsive", icon: "" },
-  { title: "Scraping", icon: "" },
-  { title: "Git", icon: "" },
-  { title: "GitHub", icon: "" },
-  { title: "GitLab", icon: "" },
-  { title: "HTML5", icon: "" },
-  { title: "CSS", icon: "" },
-  { title: "Jest", icon: "" },
-  { title: "Cypress", icon: "" },
-  { title: "Selenium", icon: "" },
-  { title: "Node js", icon: "" },
-];
 ---
 
 <!doctype html>
@@ -80,7 +55,7 @@ const stack = [
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
+    <Header client:load/>
     <main>
       <section>
         <div class="mx-auto max-w-screen-xl" id="about">
@@ -100,6 +75,7 @@ const stack = [
             </p>
 
             <a
+              target="_blank"
               href="https://serbrylex.com/cv/CVGA.pdf"
               class="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
             >
@@ -130,7 +106,7 @@ const stack = [
                       {proyect.date.toLocaleDateString()}
                     </time>
 
-                    <a href={proyect.link}>
+                    <a href={proyect.link} target="_blank">
                       <h3 class="mt-0.5 text-lg text-gray-900">
                         {proyect.title}
                       </h3>
@@ -159,14 +135,7 @@ const stack = [
 
           <div class="grid grid-cols-4 gap-4 mt-8">
             <!-- Stack -->
-            {
-              stack.map((item) => (
-                <div class="flex flex-col items-center justify-center rounded-xl border border-gray-800 p-4 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
-                  <Icon />
-                  <span class="text-gray-600 text-center">{item.title}</span>
-                </div>
-              ))
-            }
+            <Stack client:load/>
           </div>
         </div>
       </section>
