@@ -8,7 +8,7 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 import { FaGitAlt, FaGithub, FaGitlab, FaCss3Alt } from "react-icons/fa6";
 
 const Stack = () => {
-    const size = '30px'
+    const size = '27px'
     const stack = [
         {
             icon: <SiAstro size={size}/>,
@@ -95,11 +95,11 @@ const Stack = () => {
     return (
         <>
         {
-            stack.map((item) => (
-            <div class="flex flex-col items-center justify-center rounded-xl border border-gray-800 p-4 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
-                {item.icon}
-                <span class="text-gray-600 text-center">{item.title}</span>
-            </div>
+            stack.map((item, idx) => (
+                <div key={idx} className="text-xs sm:text-xl flex flex-col items-center justify-center rounded-xl border border-gray-800 p-4 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                    {item.icon}
+                    <span className="text-gray-600 text-center">{item.title}</span>
+                </div>
             ))
         }
         </>
