@@ -1,8 +1,9 @@
 import { 
     SiAstro, SiDjango, SiJavascript, SiPython,
-    SiMongodb, SiScrapy, SiJest, SiCypress, SiSelenium
+    SiMongodb, SiScrapy, SiJest, SiCypress, SiSelenium,
 } from "react-icons/si";
-import { FaReact, FaHtml5 } from "react-icons/fa";
+import { FaReact, FaHtml5, FaAws, FaCcStripe, FaRobot } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
 import { RiNextjsFill } from "react-icons/ri";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { FaGitAlt, FaGithub, FaGitlab, FaCss3Alt } from "react-icons/fa6";
@@ -10,6 +11,22 @@ import { FaGitAlt, FaGithub, FaGitlab, FaCss3Alt } from "react-icons/fa6";
 const Stack = () => {
     const size = '27px'
     const stack = [
+        {
+            icon: <FaRobot size={size}/>,
+            title: "AI",
+        },
+        {
+            icon: <FaGolang size={size}/>,
+            title: "Golang",
+        },
+        {
+            icon: <FaAws size={size}/>,
+            title: "AWS",
+        },
+        {
+            icon: <FaCcStripe size={size}/>,
+            title: "Stripe",
+        },
         {
             icon: <SiAstro size={size}/>,
             title: "Astro",

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Header = () => {
-	const [openMenu, setOpenMenu] = useState(true)
+	const [openMenu, setOpenMenu] = useState(false)
 
 	const links = [
 		{ href: '/#about', label: 'About' },
@@ -17,12 +17,12 @@ const Header = () => {
 
 	return (
 		<header className="bg-white">
-			<nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+			<nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Global">
 				<div className="flex lg:flex-1">
-					<a href="#" className="-m-1.5 p-1.5 inline-flex items-center">
+					<a href="#" className="inline-flex items-center gap-2">
 						<span className="sr-only">Serbrylex</span>
 						<img className="h-8 w-auto" src="/Logo.png" alt="" />
-            			<h5 className	="text-xl ml-2 mb-0 sm:text-2xl">
+            			<h5 className="m-0 text-xl sm:text-2xl">
 							Bryan Madrid
 						</h5>
 					</a>

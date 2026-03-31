@@ -2,16 +2,62 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
-import Stack from '../components/Stack.jsx';
+import Stack from "../components/Stack.jsx";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const proyects = [
+  {
+    title: "Aspera Learn",
+    description:
+      "Tu compañero de aprendizaje inteligente.\n\nPlataforma de aprendizaje adaptativo con IA para preparación de exámenes",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "AWS",
+      "Golang",
+      "Stripe",
+    ],
+    link: "https://www.asperalearn.com/",
+    repo: "",
+    date: new Date("2026-03-30"),
+    image: "proyects/asperalearn.png",
+  },
+  {
+    title: "Prx Creations",
+    description:
+      "Invitaciones digitales personalizadas con álbum de recuerdos.\n\nDiseña invitaciones únicas para cada evento y comparte tus mejores momentos con un álbum digital incluido.",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "AWS",
+      "Golang",
+      "Stripe",
+    ],
+    link: "https://www.prx-creations.com/",
+    repo: "",
+    date: new Date("2026-03-30"),
+    image: "proyects/prx-creations.jpg",
+  },
+  {
+    title: "Imageinador",
+    description:
+      "AI-powered creative director for designing professional YouTube thumbnails and ads with intelligent layout compositions.",
+    tags: ["React", "Next.js", "TailwindCSS", "AWS", "Golang", "Gemini"],
+    link: "https://www.imageinador.com/",
+    repo: "",
+    date: new Date("2026-03-30"),
+    image: "proyects/imageinador.png",
+  },
   {
     title: "Hadas Luxury",
     description:
       "Hadas Luxury is a mobile-first web platform designed to simplify the process of finding exquisite vacation properties nestled within the enchanting streets of Yucatan and Cancún. Our goal is to provide users with seamless access to truly exceptional rental accommodations, ensuring unforgettable experiences in these stunning destinations.",
     tags: ["React", "Next.js", "TailwindCSS", "AWS", "Django"],
-    link: "https://www.hadasluxury.com/",
+    link: "https://hadas-luxury.vercel.app/",
     repo: "",
     date: new Date("2024-04-22"),
     image: "proyects/hadas.png",
@@ -26,6 +72,7 @@ const proyects = [
     date: new Date("2024-04-22"),
     image: "proyects/cs.png",
   },
+
   {
     title: "Ultramar Fast Pass",
     description:
@@ -41,7 +88,7 @@ const proyects = [
     description:
       "DevQuality is a forward-thinking web agency dedicated to bridging the gap between your company and its target audience. Our mission is to assist you in crafting compelling websites and meticulously testing every aspect to ensure seamless functionality. With DevQuality, you can trust in our expertise to transform your digital presence into a powerful tool for engaging with real people.",
     tags: ["Astro", "TailwindCSS", "Vercel"],
-    link: "https://www.devquality.com.mx/",
+    link: "https://devquality.vercel.app/",
     repo: "",
     date: new Date("2024-03-13"),
     image: "proyects/devquality.png",
@@ -55,10 +102,10 @@ const proyects = [
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header client:load/>
+    <Header client:load />
     <main>
       <section>
-        <div class="mx-auto max-w-screen-xl" id="about">
+        <div class="mx-auto max-w-[720px]" id="about">
           <div>
             <h2 class="text-3xl font-bold sm:text-4xl">
               Full stack web developer
@@ -84,10 +131,10 @@ const proyects = [
           </div>
         </div>
 
-        <div class="mt-16" id="proyects">
+        <div class="mt-16 max-w-7xl mx-auto" id="proyects">
           <h2 class="text-3xl font-bold sm:text-4xl">Proyects!</h2>
 
-          <div class="grid grid-cols-1 gap-8 mt-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <!-- Proyects -->
             {
               proyects.map((proyect) => (
@@ -130,16 +177,16 @@ const proyects = [
           </div>
         </div>
 
-        <div class="mt-16" id="stack">
+        <div class="max-w-[720px] mt-16 mx-auto" id="stack">
           <h2 class="text-3xl font-bold sm:text-4xl">Tech Stack</h2>
 
           <div class="grid grid-cols-4 gap-4 mt-8">
             <!-- Stack -->
-            <Stack client:load/>
+            <Stack client:load />
           </div>
         </div>
       </section>
     </main>
-	<Footer />
+    <Footer />
   </body>
 </html>
